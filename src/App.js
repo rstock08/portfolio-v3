@@ -18,6 +18,7 @@ class App extends Component {
                 </Sticky>
                 <IntroComponent />
                 <ProfileComponent />
+                <ProjectExamplesComponent />
             </div>
         );
     }

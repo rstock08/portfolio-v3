@@ -6,7 +6,6 @@ export default class IntroComponent extends Component {
         return (
             <Image
                 fluid
-                style={{ height: "100%" }}
                 src={require("/resources/England-Overlay-Logo-Caption.png")}
             />
         );
