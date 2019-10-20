@@ -10,8 +10,8 @@ export default class NavbarComponent extends Component {
         const { activeItem } = this.state;
 
         return (
-            <div>
-                <Segment inverted>
+            <div style={{ backgroundColor: "black" }}>
+                <Segment inverted >
                     <Menu inverted pointing secondary fluid widths={4}>
                         <Menu.Item
                             name="home"
