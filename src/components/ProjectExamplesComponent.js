@@ -6,28 +6,41 @@ import { Grid, GridRow, GridColumn } from "semantic-ui-react";
 export default class ProfileComponent extends Component {
     render() {
         return (
-            <Grid centered>
-                <GridRow style={{ backgroundColor: "red" }}>
-                    <GridColumn width={3}></GridColumn>
-                    <GridColumn width={10}>
-                        <Carousel autoPlay>
-                            <div>
-                                <img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                        </Carousel>
-                    </GridColumn>
-                    <GridColumn width={3}></GridColumn>
-                </GridRow>
-            </Grid>
+            <GridRow
+                centered
+                style={{ backgroundColor: "red", marginTop: -20 }}
+            >
+                <GridColumn width={0}></GridColumn>
+                <GridColumn width={16}>
+                    <Carousel
+                        selectedItem={1}
+                        showThumbs={false}
+                        showStatus={false}
+                        infiniteLoop
+                        useKeyboardArrows
+                        autoPlay
+                        emulateTouch
+                        transitionTime={1500}
+                        animation="slide left"
+                        showNextPrev={false}
+                        showIndicators={true}
+                    >
+                        <div>
+                            <img src={require("/resources/project1.png")} />
+                            <p className="legend">Legend 1</p>
+                        </div>
+                        <div>
+                            <img src={require("/resources/project2.png")} />
+                            <p className="legend">Legend 2</p>
+                        </div>
+                        <div>
+                            <img src={require("/resources/project3.png")} />
+                            <p className="legend">Legend 3</p>
+                        </div>
+                    </Carousel>
+                </GridColumn>
+                <GridColumn width={0}></GridColumn>
+            </GridRow>
         );
     }
 }

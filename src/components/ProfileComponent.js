@@ -11,7 +11,14 @@ import React, { Component } from "react";
 export default class ProfileComponent extends Component {
     render() {
         return (
-            <Grid centered style={{ backgroundColor: "blue", paddingTop: 60 }}>
+            <Grid
+                centered
+                style={{
+                    backgroundColor: "blue",
+                    paddingTop: 60,
+                    paddingBottom: 60
+                }}
+            >
                 <GridRow>
                     <GridColumn
                         style={{ paddingBottom: 20 }}

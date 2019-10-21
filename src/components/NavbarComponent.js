@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+            import React, { Component } from "react";
 import { Menu, Segment } from "semantic-ui-react";
 
 export default class NavbarComponent extends Component {
