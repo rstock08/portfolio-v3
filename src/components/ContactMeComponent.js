@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Grid, GridRow, GridColumn } from "semantic-ui-react";
 
-export default class ProfileComponent extends Component {
+export default class ContactMeComponent extends Component {
     render() {
         return (
             <GridRow

@@ -5,6 +5,8 @@ import NavbarComponent from "./components/NavbarComponent";
 import IntroComponent from "./components/IntroComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
+import ContactMeComponent from "./components/ContactMeComponent";
+import SocialMediaComponent from "./components/SocialMediaComponent";
 
 // Creating a class called App which uses Component
 class App extends Component {
@@ -16,9 +18,11 @@ class App extends Component {
                 <Sticky context={this.contextRef}>
                     <NavbarComponent />
                 </Sticky>
+                <SocialMediaComponent />
                 <IntroComponent />
                 <ProfileComponent />
                 <ProjectExamplesComponent />
+                <ContactMeComponent />
             </div>
         );
     }

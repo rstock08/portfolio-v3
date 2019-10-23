@@ -1,4 +1,4 @@
-            import React, { Component } from "react";
+import React, { Component } from "react";
 import { Menu, Segment } from "semantic-ui-react";
 
 export default class NavbarComponent extends Component {
@@ -11,8 +11,16 @@ export default class NavbarComponent extends Component {
 
         return (
             <div style={{ backgroundColor: "black" }}>
-                <Segment inverted >
-                    <Menu inverted pointing secondary fluid widths={4}>
+                <Segment inverted>
+                    <Menu
+                        size="huge"
+                        stackable
+                        inverted
+                        pointing
+                        secondary
+                        fluid
+                        widths={4}
+                    >
                         <Menu.Item
                             name="home"
                             active={activeItem === "home"}
