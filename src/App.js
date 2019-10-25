@@ -18,7 +18,7 @@ class App extends Component {
                 <Sticky context={this.contextRef}>
                     <NavbarComponent />
                 </Sticky>
-                <SocialMediaComponent />
+
                 <IntroComponent />
                 <ProfileComponent />
                 <ProjectExamplesComponent />
