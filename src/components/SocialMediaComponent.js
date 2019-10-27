@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import { Button, Segment, Container } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 
 export default class SocialMediaComponent extends Component {
     render() {
         return (
-            <Container
+            <Grid
                 style={{
                     marginBottom: -10,
                     marginTop: -10
                 }}
+                stackable="false"
             >
                 <Button circular color="facebook" icon="facebook" />
                 <Button circular color="twitter" icon="twitter" />
                 <Button circular color="linkedin" icon="linkedin" />
                 <Button circular color="google plus" icon="google plus" />
-            </Container>
+            </Grid>
         );
     }
 }
