@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Menu, Segment, Icon } from "semantic-ui-react";
+import { Menu, Segment } from "semantic-ui-react";
+import SocialMediaComponent from "./SocialMediaComponent";
 
 export default class NavbarComponent extends Component {
     state = { activeItem: "home" };
@@ -12,7 +13,7 @@ export default class NavbarComponent extends Component {
         return (
             <div style={{ backgroundColor: "black" }}>
                 <Segment inverted>
-                    <Menu icon inverted pointing secondary widths={5}>
+                    <Menu stackable inverted pointing secondary widths={5}>
                         <Menu.Item
                             name="home"
                             active={activeItem === "home"}
@@ -33,34 +34,9 @@ export default class NavbarComponent extends Component {
                             active={activeItem === "reach-out"}
                             onClick={this.handleItemClick}
                         />
-                        <Menu.Menu>
-                            <Menu.Item
-                                position={"right"}
-                                name="gamepad"
-                                active={activeItem === "gamepad"}
-                                onClick={this.handleItemClick}
-                            >
-                                <Icon name="gamepad" />
-                            </Menu.Item>
-
-                            <Menu.Item
-                                position={"right"}
-                                name="video camera"
-                                active={activeItem === "video camera"}
-                                onClick={this.handleItemClick}
-                            >
-                                <Icon name="video camera" />
-                            </Menu.Item>
-
-                            <Menu.Item
-                                position={"right"}
-                                name="video play"
-                                active={activeItem === "video play"}
-                                onClick={this.handleItemClick}
-                            >
-                                <Icon name="video play" />
-                            </Menu.Item>
-                        </Menu.Menu>
+                        <Menu.Item position="right">
+                            <SocialMediaComponent />
+                        </Menu.Item>
                     </Menu>
                 </Segment>
             </div>
