@@ -6,8 +6,8 @@ export default class SocialMediaComponent extends Component {
         return (
             <Grid
                 style={{
-                    marginBottom: -10,
-                    marginTop: -10
+                    marginTop: 0,
+                    marginBottom: -5
                 }}
                 stackable="false"
             >
