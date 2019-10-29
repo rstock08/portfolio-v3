@@ -11,7 +11,7 @@ export default class NavbarComponent extends Component {
         const { activeItem } = this.state;
 
         return (
-            <div style={{ backgroundColor: "black" }}>
+            <div style={{ backgroundColor: "black", marginTop: -10 }}>
                 <Segment inverted>
                     <Menu stackable inverted pointing secondary widths={5}>
                         <Menu.Item

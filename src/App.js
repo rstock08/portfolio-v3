@@ -2,7 +2,7 @@
 import React, { Component, createRef } from "react";
 import { Sticky } from "semantic-ui-react";
 import NavbarComponent from "./components/NavbarComponent";
-import IntroComponent from "./components/IntroComponent";
+import IntroComponent from "./components/JumbotronComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
 import ContactMeComponent from "./components/ContactMeComponent";
