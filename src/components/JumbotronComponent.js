@@ -5,32 +5,46 @@ import Background from "/resources/England-Jumbotron.jpg";
 export default class IntroComponent extends Component {
     render() {
         return (
-            <div style={{ fontSize: 30, position: "relative" }}>
-                <Image
-                    fluid
-                    src={require("/resources/England-Jumbotron.jpg")}
-                />
-                <div
-                    style={{
-                        position: "relative",
-                        zIndex: "1",
-                        marginTop: -400,
-                        paddingBottom: 300
-                    }}
-                >
-                    <Header
-                        as="h1"
-                        size="huge"
+            <div
+                class="jumbotron jumbotron-fluid"
+                style={{
+                    marginTop: -10,
+                    marginBottom: 0,
+                    paddingBottom: 400,
+                    backgroundImage: `url(${Background})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center"
+                }}
+            >
+                <div class="container" style={{ paddingTop: 200 }}>
+                    <h1
                         style={{
-                            color: "white"
+                            fontSize: 60,
+                            color: "#ebeae8",
+                            textShadow: "-2px 1px 1px #383736"
                         }}
                     >
                         Hi, I'm Reed.
-                        <Header.Subheader style={{ color: "lightgrey" }}>
-                            Software Engineer. Innovator. Self Starter. Self
-                            Learner. Account Settings
-                        </Header.Subheader>
-                    </Header>
+                    </h1>
+                    <p
+                        style={{
+                            fontSize: 30,
+                            color: "#ebeae8",
+                            textShadow: "-2px 1px 1px #383736"
+                        }}
+                    >
+                        Test test test test
+                    </p>
+                    <p
+                        style={{
+                            fontSize: 30,
+                            color: "#ebeae8",
+                            textShadow: "-2px 1px 1px #383736"
+                        }}
+                    >
+                        Software Engineer. Innovator. Self Starter. Self
+                        Learner.
+                    </p>
                 </div>
             </div>
         );
