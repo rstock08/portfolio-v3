@@ -2,8 +2,42 @@ import React, { Component } from "react";
 import { Image, Header } from "semantic-ui-react";
 import Background from "/resources/England-Jumbotron.jpg";
 
+const TITLES = [
+    "I'm a Software Engineer.",
+    "a self starter.",
+    "an enthusiastic learner.",
+    "an innovator."
+];
+
 export default class IntroComponent extends Component {
+    state = { titleIndex: 0 };
+
+    componentDidMount() {
+        console.log("Title component has mounted!");
+        this.animateTitles();
+    }
+
+    componentWillUnmount() {
+        console.log("Title component will unmount!");
+        clearInterval(this.titleInterval);
+    }
+
+    animateTitles = () => {
+        // Causes a small memory leak because if the component is unmounted setInterval is still going to fire after 4 seconds
+        this.titleInterval = setInterval(() => {
+            //setInterval(()=>{
+            if (this.state.titleIndex < 3) {
+                this.setState({ titleIndex: (this.state.titleIndex += 1) });
+            } else {
+                this.setState({ titleIndex: 0 });
+            }
+        }, 6000);
+        console.log("this.titleInterval" + this.titleInterval);
+    };
+
     render() {
+        const title = TITLES[this.state.titleIndex];
+
         return (
             <div
                 class="jumbotron jumbotron-fluid"
@@ -33,7 +67,7 @@ export default class IntroComponent extends Component {
                             textShadow: "-2px 1px 1px #383736"
                         }}
                     >
-                        Test test test test
+                        I'm always looking forward to taking on a challenge!
                     </p>
                     <p
                         style={{
@@ -42,8 +76,7 @@ export default class IntroComponent extends Component {
                             textShadow: "-2px 1px 1px #383736"
                         }}
                     >
-                        Software Engineer. Innovator. Self Starter. Self
-                        Learner.
+                        {title}
                     </p>
                 </div>
             </div>
