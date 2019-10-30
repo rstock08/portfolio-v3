@@ -4,11 +4,21 @@ import {
     Grid,
     Image,
     GridRow,
-    GridColumn
+    GridColumn,
+    Button,
+    Modal,
+    Icon,
+    Rail
 } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export default class ProfileComponent extends Component {
+    state = { modalOpen: false };
+
+    handleOpen = () => this.setState({ modalOpen: true });
+
+    handleClose = () => this.setState({ modalOpen: false });
+
     render() {
         return (
             <Grid
@@ -34,6 +44,45 @@ export default class ProfileComponent extends Component {
                             centered
                             circular
                         />
+                        <Rail size="big" position="left">
+                            Big Left Rail
+                        </Rail>
+                        <Modal
+                            trigger={
+                                <Button
+                                    attached="top"
+                                    onClick={this.handleOpen}
+                                    style={{
+                                        marginTop: 20,
+                                        marginLeft: 80,
+                                        marginRight: 80
+                                    }}
+                                >
+                                    Show Modal
+                                </Button>
+                            }
+                            open={this.state.modalOpen}
+                            onClose={this.handleClose}
+                            basic
+                            size="small"
+                        >
+                            <Header icon="browser" content="Cookies policy" />
+                            <Modal.Content>
+                                <h3>
+                                    This website uses cookies to ensure the best
+                                    user experience.
+                                </h3>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button
+                                    color="green"
+                                    onClick={this.handleClose}
+                                    inverted
+                                >
+                                    <Icon name="checkmark" /> Got it
+                                </Button>
+                            </Modal.Actions>
+                        </Modal>
                     </GridColumn>
                     <GridColumn
                         mobile={16}

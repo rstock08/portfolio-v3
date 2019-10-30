@@ -9,7 +9,7 @@ const TITLES = [
     "an innovator."
 ];
 
-export default class IntroComponent extends Component {
+export default class JumbotronComponent extends Component {
     state = { titleIndex: 0 };
 
     componentDidMount() {
@@ -31,7 +31,7 @@ export default class IntroComponent extends Component {
             } else {
                 this.setState({ titleIndex: 0 });
             }
-        }, 6000);
+        }, 4000);
         console.log("this.titleInterval" + this.titleInterval);
     };
 
@@ -40,7 +40,7 @@ export default class IntroComponent extends Component {
 
         return (
             <div
-                class="jumbotron jumbotron-fluid"
+                className="jumbotron jumbotron-fluid"
                 style={{
                     marginTop: -10,
                     marginBottom: 0,
@@ -67,7 +67,8 @@ export default class IntroComponent extends Component {
                             textShadow: "-2px 1px 1px #383736"
                         }}
                     >
-                        I'm always looking forward to taking on a challenge!
+                        I'm always looking forward to taking on my next
+                        challenge!
                     </p>
                     <p
                         style={{

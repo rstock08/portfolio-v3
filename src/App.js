@@ -2,11 +2,10 @@
 import React, { Component, createRef } from "react";
 import { Sticky } from "semantic-ui-react";
 import NavbarComponent from "./components/NavbarComponent";
-import IntroComponent from "./components/JumbotronComponent";
+import JumbotronComponent from "./components/JumbotronComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
 import ContactMeComponent from "./components/ContactMeComponent";
-import SocialMediaComponent from "./components/SocialMediaComponent";
 
 // Creating a class called App which uses Component
 class App extends Component {
@@ -19,7 +18,7 @@ class App extends Component {
                     <NavbarComponent />
                 </Sticky>
 
-                <IntroComponent />
+                <JumbotronComponent />
                 <ProfileComponent />
                 <ProjectExamplesComponent />
                 <ContactMeComponent />

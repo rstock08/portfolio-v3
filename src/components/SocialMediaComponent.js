@@ -9,7 +9,7 @@ export default class SocialMediaComponent extends Component {
                     marginTop: 0,
                     marginBottom: -5
                 }}
-                stackable="false"
+                stackable={false}
             >
                 <Button circular color="facebook" icon="facebook" />
                 <Button circular color="twitter" icon="twitter" />
