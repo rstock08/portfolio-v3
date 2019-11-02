@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Image, Header } from "semantic-ui-react";
 import Background from "/resources/England-Jumbotron.jpg";
 
 const TITLES = [
     "I'm a Software Engineer.",
     "a self starter.",
     "an enthusiastic learner.",
-    "an innovator."
+    "an innovator.",
+    "a Software Engineer."
 ];
 
 export default class JumbotronComponent extends Component {
@@ -26,10 +26,10 @@ export default class JumbotronComponent extends Component {
         // Causes a small memory leak because if the component is unmounted setInterval is still going to fire after 4 seconds
         this.titleInterval = setInterval(() => {
             //setInterval(()=>{
-            if (this.state.titleIndex < 3) {
+            if (this.state.titleIndex < 4) {
                 this.setState({ titleIndex: (this.state.titleIndex += 1) });
             } else {
-                this.setState({ titleIndex: 0 });
+                this.setState({ titleIndex: 1 });
             }
         }, 4000);
         console.log("this.titleInterval" + this.titleInterval);
@@ -50,7 +50,7 @@ export default class JumbotronComponent extends Component {
                     backgroundPosition: "center center"
                 }}
             >
-                <div class="container" style={{ paddingTop: 200 }}>
+                <div className="container" style={{ paddingTop: 200 }}>
                     <h1
                         style={{
                             fontSize: 60,
