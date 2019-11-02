@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import Background from "/resources/England-Jumbotron.jpg";
 
 const TITLES = [
-    "I'm a Software Engineer.",
-    "a self starter.",
-    "an enthusiastic learner.",
-    "an innovator.",
-    "a Software Engineer."
+    "A Software Engineer.",
+    "A self-starter.",
+    "An enthusiastic learner.",
+    "An innovator."
 ];
 
 export default class JumbotronComponent extends Component {
@@ -26,10 +25,10 @@ export default class JumbotronComponent extends Component {
         // Causes a small memory leak because if the component is unmounted setInterval is still going to fire after 4 seconds
         this.titleInterval = setInterval(() => {
             //setInterval(()=>{
-            if (this.state.titleIndex < 4) {
+            if (this.state.titleIndex < 3) {
                 this.setState({ titleIndex: (this.state.titleIndex += 1) });
             } else {
-                this.setState({ titleIndex: 1 });
+                this.setState({ titleIndex: 0 });
             }
         }, 4000);
         console.log("this.titleInterval" + this.titleInterval);
@@ -67,8 +66,7 @@ export default class JumbotronComponent extends Component {
                             textShadow: "-2px 1px 1px #383736"
                         }}
                     >
-                        I'm always looking forward to taking on my next
-                        challenge!
+                        {title}
                     </p>
                     <p
                         style={{
@@ -77,7 +75,8 @@ export default class JumbotronComponent extends Component {
                             textShadow: "-2px 1px 1px #383736"
                         }}
                     >
-                        {title}
+                        I'm always looking forward to taking on the next
+                        challenge!
                     </p>
                 </div>
             </div>

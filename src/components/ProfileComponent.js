@@ -7,8 +7,7 @@ import {
     GridColumn,
     Button,
     Modal,
-    Icon,
-    Rail
+    Icon
 } from "semantic-ui-react";
 import React, { Component } from "react";
 
@@ -44,20 +43,9 @@ export default class ProfileComponent extends Component {
                             centered
                             circular
                         />
-                        <Rail size="big" position="left">
-                            Big Left Rail
-                        </Rail>
                         <Modal
                             trigger={
-                                <Button
-                                    attached="top"
-                                    onClick={this.handleOpen}
-                                    style={{
-                                        marginTop: 20,
-                                        marginLeft: 80,
-                                        marginRight: 80
-                                    }}
-                                >
+                                <Button onClick={this.handleOpen}>
                                     Show Modal
                                 </Button>
                             }
