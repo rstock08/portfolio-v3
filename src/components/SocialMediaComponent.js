@@ -1,22 +1,7 @@
 import React, { Component } from "react";
-import ResumeModalComponent from "./ResumeModalComponent";
 import { Popup, Button, Grid, Link } from "semantic-ui-react";
-import DownloadLink from "react-download-link";
 
 export default class SocialMediaComponent extends Component {
-    state = { modalOpen: false };
-    closeModal = () => this.setState({ modalOpen: false });
-    openModal = () => this.setState({ modalOpen: true });
-    downloadResume = () => {
-        console.log("Downloading pdf");
-        <DownloadLink
-            filename="/resources/Reed Stock - Resume.pdf.pdf"
-            exportFile={() => "My cached data"}
-        >
-            Save to disk
-        </DownloadLink>;
-    };
-
     redirectOnClick = (e, data) => {
         window.open(data.link);
     };
@@ -39,7 +24,7 @@ export default class SocialMediaComponent extends Component {
                             size="large"
                             circular
                             icon="file alternate"
-                            onClick={this.openModal}
+                            onClick={this.props.openModal}
                         />
                     }
                 />
@@ -88,15 +73,6 @@ export default class SocialMediaComponent extends Component {
                         />
                     }
                 />
-
-                {this.state.modalOpen ? (
-                    <ResumeModalComponent
-                        modalOpen={this.state.modalOpen}
-                        openModal={this.openModal}
-                        closeModal={this.closeModal}
-                        downloadResume={this.downloadResume}
-                    />
-                ) : null}
             </Grid>
         );
     }

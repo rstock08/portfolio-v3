@@ -35,7 +35,9 @@ export default class NavbarComponent extends Component {
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item position="right">
-                            <SocialMediaComponent />
+                            <SocialMediaComponent
+                                openModal={this.props.openModal}
+                            />
                         </Menu.Item>
                     </Menu>
                 </Segment>

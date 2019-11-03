@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Modal, Image, Header, Icon } from "semantic-ui-react";
+import { Button, Modal, Image, Icon } from "semantic-ui-react";
 
 export default class ResumeModalComponent extends Component {
     constructor(props) {
@@ -14,24 +14,17 @@ export default class ResumeModalComponent extends Component {
     render() {
         return (
             <Modal
+                style={{ marginLeft: "15%" }}
                 open={this.props.modalOpen}
                 size="large"
-                style={{
-                    marginTop: "0px !important",
-                    marginLeft: 200,
-                    paddingRight: 0
-                }}
             >
-                <Modal.Header>Profile Picture</Modal.Header>
-                <Modal.Content image scrolling>
-                    <Modal.Description>
-                        <Image
-                            src={require("/resources/Reed Stock - Resume.jpg")}
-                            size="massive"
-                        />
-                    </Modal.Description>
+                <Modal.Header>Reed's Resume</Modal.Header>
+                <Modal.Content scrolling style={{ marginBottom: 80 }}>
+                    <Image
+                        src={require("/resources/Reed Stock - Resume.jpg")}
+                    />
                 </Modal.Content>
-                <Modal.Actions style={{ marginBottom: -200 }}>
+                <Modal.Actions>
                     <Button
                         positive
                         icon
