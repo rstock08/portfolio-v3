@@ -18,22 +18,26 @@ export default class ResumeModalComponent extends Component {
                 size="large"
                 style={{
                     marginTop: "0px !important",
-                    marginLeft: "0",
-                    paddingRight: "0"
+                    marginLeft: 200,
+                    paddingRight: 0
                 }}
             >
                 <Modal.Header>Profile Picture</Modal.Header>
                 <Modal.Content image scrolling>
                     <Modal.Description>
-                        <Header>Modal Header</Header>
                         <Image
                             src={require("/resources/Reed Stock - Resume.jpg")}
                             size="massive"
                         />
                     </Modal.Description>
                 </Modal.Content>
-                <Modal.Actions>
-                    <Button positive icon labelPosition="right" onClick={this.props.downloadResume}>
+                <Modal.Actions style={{ marginBottom: -200 }}>
+                    <Button
+                        positive
+                        icon
+                        labelPosition="right"
+                        onClick={this.props.downloadResume}
+                    >
                         <Icon name="download" />
                         Download
                     </Button>

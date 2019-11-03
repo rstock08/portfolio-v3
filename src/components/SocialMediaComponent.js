@@ -30,15 +30,6 @@ export default class SocialMediaComponent extends Component {
                 }}
                 stackable={false}
             >
-                {this.state.modalOpen ? (
-                    <ResumeModalComponent
-                        modalOpen={this.state.modalOpen}
-                        openModal={this.openModal}
-                        closeModal={this.closeModal}
-                        downloadResume={this.downloadResume}
-                    />
-                ) : null}
-
                 <Popup
                     content="Take a look at my resume."
                     position="bottom center"
@@ -97,43 +88,16 @@ export default class SocialMediaComponent extends Component {
                         />
                     }
                 />
+
+                {this.state.modalOpen ? (
+                    <ResumeModalComponent
+                        modalOpen={this.state.modalOpen}
+                        openModal={this.openModal}
+                        closeModal={this.closeModal}
+                        downloadResume={this.downloadResume}
+                    />
+                ) : null}
             </Grid>
         );
     }
 }
-/*
-                        <Popup
-                            content="Take a look at my resume."
-                            position="bottom center"
-                            trigger={
-                                <Button
-                                    link="https://github.com/rstock08"
-                                    size="large"
-                                    inverted
-                                    circular
-                                    icon="github"
-                                    onClick={this.redirectOnButtonClick}
-                                />
-                            }
-                        />
-*/
-/*<div
-                style={{
-                    backgroundColor: "black",
-                    paddingTop: 20,
-                    paddingBottom: 20
-                }}
-            >
-
-                <Button circular color="facebook" icon="facebook" />
-                <Button circular color="twitter" icon="twitter" />
-                <Button circular color="linkedin" icon="linkedin" />
-                <Button circular color="google plus" icon="google plus" />
-            </div>
-            
-            <Popup
-                content="Check out my github!"
-                trigger={}
-                />
-
-            */
