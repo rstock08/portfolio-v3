@@ -9,6 +9,7 @@
         "prettier": "^1.18.2",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
+        "react-download-link": "^2.2.0",
         "react-responsive-carousel": "^3.1.50",
         "reactstrap": "^8.1.1",
         "semantic-ui-css": "^2.4.1",

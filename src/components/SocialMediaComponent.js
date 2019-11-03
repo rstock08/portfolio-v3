@@ -1,25 +1,25 @@
 import React, { Component } from "react";
-import {
-    Popup,
-    Button,
-    Grid,
-    Modal,
-    Image,
-    Header,
-    Icon
-} from "semantic-ui-react";
-import { createRequireFromPath } from "module";
+import ResumeModalComponent from "./ResumeModalComponent";
+import { Popup, Button, Grid, Link } from "semantic-ui-react";
+import DownloadLink from "react-download-link";
 
 export default class SocialMediaComponent extends Component {
     state = { modalOpen: false };
-
-    redirectOnClick = (e, data) => {
-        console.log(e + data);
-        window.open(data.link);
-    };
-
     closeModal = () => this.setState({ modalOpen: false });
     openModal = () => this.setState({ modalOpen: true });
+    downloadResume = () => {
+        console.log("Downloading pdf");
+        <DownloadLink
+            filename="/resources/Reed Stock - Resume.pdf.pdf"
+            exportFile={() => "My cached data"}
+        >
+            Save to disk
+        </DownloadLink>;
+    };
+
+    redirectOnClick = (e, data) => {
+        window.open(data.link);
+    };
 
     render() {
         return (
@@ -30,36 +30,14 @@ export default class SocialMediaComponent extends Component {
                 }}
                 stackable={false}
             >
-                <Modal
-                    open={this.state.modalOpen}
-                    size="large"
-                    style={{
-                        marginTop: "0px !important",
-                        marginLeft: "0",
-                        paddingRight: "0"
-                    }}
-                >
-                    <Modal.Header>Profile Picture</Modal.Header>
-                    <Modal.Content image scrolling>
-                        <Modal.Description>
-                            <Header>Modal Header</Header>
-                            <p>
-                                This is an example of expanded content that will
-                                cause the modal's dimmer to scroll
-                            </p>
-
-                            <Image
-                                src={require("/resources/Reed Stock - Resume.jpg")}
-                                size="massive"
-                            />
-                        </Modal.Description>
-                    </Modal.Content>
-                    <Modal.Actions>
-                        <Button primary onClick={this.closeModal}>
-                            Close <Icon name="chevron right" />
-                        </Button>
-                    </Modal.Actions>
-                </Modal>
+                {this.state.modalOpen ? (
+                    <ResumeModalComponent
+                        modalOpen={this.state.modalOpen}
+                        openModal={this.openModal}
+                        closeModal={this.closeModal}
+                        downloadResume={this.downloadResume}
+                    />
+                ) : null}
 
                 <Popup
                     content="Take a look at my resume."

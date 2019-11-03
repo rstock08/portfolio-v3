@@ -10,13 +10,12 @@ import {
     Icon
 } from "semantic-ui-react";
 import React, { Component } from "react";
+import ResumeModalComponent from "./ResumeModalComponent";
 
 export default class ProfileComponent extends Component {
     state = { modalOpen: false };
-
-    handleOpen = () => this.setState({ modalOpen: true });
-
-    handleClose = () => this.setState({ modalOpen: false });
+    closeModal = () => this.setState({ modalOpen: false });
+    openModal = () => this.setState({ modalOpen: true });
 
     render() {
         return (
@@ -28,6 +27,15 @@ export default class ProfileComponent extends Component {
                     paddingBottom: 60
                 }}
             >
+                {this.state.modalOpen ? (
+                    <ResumeModalComponent
+                        modalOpen={this.state.modalOpen}
+                        openModal={this.openModal}
+                        closeModal={this.closeModal}
+                        downloadResume={this.downloadResume}
+                    />
+                ) : null}
+
                 <GridRow>
                     <GridColumn
                         style={{ paddingBottom: 20 }}
@@ -43,34 +51,8 @@ export default class ProfileComponent extends Component {
                             centered
                             circular
                         />
-                        <Modal
-                            trigger={
-                                <Button onClick={this.handleOpen}>
-                                    Show Modal
-                                </Button>
-                            }
-                            open={this.state.modalOpen}
-                            onClose={this.handleClose}
-                            basic
-                            size="small"
-                        >
-                            <Header icon="browser" content="Cookies policy" />
-                            <Modal.Content>
-                                <h3>
-                                    This website uses cookies to ensure the best
-                                    user experience.
-                                </h3>
-                            </Modal.Content>
-                            <Modal.Actions>
-                                <Button
-                                    color="green"
-                                    onClick={this.handleClose}
-                                    inverted
-                                >
-                                    <Icon name="checkmark" /> Got it
-                                </Button>
-                            </Modal.Actions>
-                        </Modal>
+
+                        <Button onClick={this.openModal}>Show Modal</Button>
                     </GridColumn>
                     <GridColumn
                         mobile={16}

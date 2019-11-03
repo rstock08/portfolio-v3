@@ -19,9 +19,8 @@ export default class ContactMeComponent extends Component {
                     centered
                     style={{
                         backgroundColor: "red",
-                        marginTop: -20,
-                        paddingLeft: 10,
-                        paddingRight: 10
+                        marginTop: 14,
+                        marginRight: -20
                     }}
                 >
                     <GridColumn
@@ -36,19 +35,22 @@ export default class ContactMeComponent extends Component {
                         largeScreen={6}
                         widescreen={6}
                     >
+                        <h1
+                            style={{
+                                fontSize: 40,
+                                color: "#ebeae8",
+                                textShadow: "-2px 1px 1px #383736"
+                            }}
+                        >
+                            Reach out!
+                        </h1>
                         <Form>
                             <Form.Group widths="equal">
                                 <Form.Field
                                     id="form-input-control-first-name"
                                     control={Input}
                                     label="First name"
-                                    placeholder="First name"
-                                />
-                                <Form.Field
-                                    id="form-input-control-last-name"
-                                    control={Input}
-                                    label="Last name"
-                                    placeholder="Last name"
+                                    placeholder="Email"
                                 />
                             </Form.Group>
                             <Form.Field
@@ -61,7 +63,6 @@ export default class ContactMeComponent extends Component {
                                 id="form-button-control-public"
                                 control={Button}
                                 content="Confirm"
-                                label="Label with htmlFor"
                             />
                         </Form>
                     </GridColumn>

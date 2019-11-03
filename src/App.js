@@ -6,6 +6,7 @@ import JumbotronComponent from "./components/JumbotronComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
 import ContactMeComponent from "./components/ContactMeComponent";
+import FooterComponent from "./components/FooterComponent";
 
 // Creating a class called App which uses Component
 class App extends Component {
@@ -17,11 +18,11 @@ class App extends Component {
                 <Sticky context={this.contextRef}>
                     <NavbarComponent />
                 </Sticky>
-
                 <JumbotronComponent />
                 <ProfileComponent />
                 <ProjectExamplesComponent />
                 <ContactMeComponent />
+                <FooterComponent />
             </div>
         );
     }
