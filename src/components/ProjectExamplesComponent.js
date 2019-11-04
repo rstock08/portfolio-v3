@@ -9,9 +9,21 @@ export default class ProfileComponent extends Component {
             <Grid>
                 <GridRow
                     columns={3}
-                    style={{ paddingLeft: "2%", paddingRight: "2%" }}
+                    style={{
+                        paddingLeft: "5%",
+                        paddingRight: "2%",
+                        marginTop: -15,
+                        marginBottom: -15,
+                        backgroundColor: "yellow"
+                    }}
                 >
-                    <GridColumn width={10}>
+                    <GridColumn
+                        mobile={16}
+                        tablet={16}
+                        computer={10}
+                        largeScreen={10}
+                        widescreen={10}
+                    >
                         <Carousel
                             selectedItem={1}
                             showThumbs={false}
@@ -39,32 +51,52 @@ export default class ProfileComponent extends Component {
                             </div>
                         </Carousel>
                     </GridColumn>
-                    <GridColumn width={3}>
+                    <GridColumn
+                        mobile={8}
+                        tablet={8}
+                        computer={3}
+                        largeScreen={3}
+                        widescreen={3}
+                    >
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            src={require("/resources/aws-logo.png")}
                             centered
+                            size="small"
                         />
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            src={require("/resources/docker-logo.png")}
                             centered
+                            size="small"
                         />
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            src={require("/resources/confluence-jira-logo.png")}
                             centered
+                            size="small"
                         />
                     </GridColumn>
-                    <GridColumn width={3}>
+                    <GridColumn
+                        mobile={8}
+                        tablet={8}
+                        computer={3}
+                        largeScreen={3}
+                        widescreen={3}
+                        backgroundColor="white"
+                    >
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            src={require("/resources/react-js-logo.png")}
                             centered
+                            size="small"
                         />
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            src={require("/resources/javascript-logo.png")}
                             centered
+                            size="small"
                         />
                         <Image
-                            src={require("/resources/placeholder.jpg")}
+                            backgroundColor="white"
+                            src={require("/resources/bootstrap-logo.png")}
                             centered
+                            size="tiny"
                         />
                     </GridColumn>
                 </GridRow>

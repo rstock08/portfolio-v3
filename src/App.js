@@ -3,7 +3,7 @@ import React, { Component, createRef } from "react";
 import { Sticky } from "semantic-ui-react";
 import NavbarComponent from "./components/NavbarComponent";
 import JumbotronComponent from "./components/JumbotronComponent";
-import ProfileComponent from "./components/ProfileComponent";
+import AboutComponent from "./components/AboutComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
 import ContactMeComponent from "./components/ContactMeComponent";
 import FooterComponent from "./components/FooterComponent";
@@ -29,11 +29,13 @@ class App extends Component {
     render() {
         return (
             <div ref={this.contextRef}>
+                <section id="home"></section>
                 <Sticky context={this.contextRef}>
                     <NavbarComponent openModal={this.openModal} />
                 </Sticky>
                 <JumbotronComponent />
-                <ProfileComponent openModal={this.openModal} />
+                <section id="about"></section>
+                <AboutComponent openModal={this.openModal} />
                 {this.state.modalOpen ? (
                     <ResumeModalComponent
                         modalOpen={this.state.modalOpen}
@@ -42,7 +44,9 @@ class App extends Component {
                         downloadResume={this.downloadResume}
                     />
                 ) : null}
+                <section id="project-examples"></section>
                 <ProjectExamplesComponent />
+                <section id="reach-out"></section>
                 <ContactMeComponent />
                 <FooterComponent />
             </div>

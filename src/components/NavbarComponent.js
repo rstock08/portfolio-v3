@@ -15,21 +15,25 @@ export default class NavbarComponent extends Component {
                 <Segment inverted>
                     <Menu stackable inverted pointing secondary widths={5}>
                         <Menu.Item
+                            href="#home"
                             name="home"
                             active={activeItem === "home"}
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item
-                            name="bio"
-                            active={activeItem === "bio"}
+                            href="#about"
+                            name="about"
+                            active={activeItem === "about"}
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item
-                            name="projects-examples"
-                            active={activeItem === "projects-examples"}
+                            href="#project-examples"
+                            name="project-examples"
+                            active={activeItem === "project-examples"}
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item
+                            href="#reach-out"
                             name="reach-out"
                             active={activeItem === "reach-out"}
                             onClick={this.handleItemClick}
