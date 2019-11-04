@@ -3,7 +3,7 @@ import React, { Component, createRef } from "react";
 import { Sticky } from "semantic-ui-react";
 import NavbarComponent from "./components/NavbarComponent";
 import JumbotronComponent from "./components/JumbotronComponent";
-import AboutComponent from "./components/AboutComponent";
+import AboutMeComponent from "./components/AboutMeComponent";
 import ProjectExamplesComponent from "./components/ProjectExamplesComponent";
 import ContactMeComponent from "./components/ContactMeComponent";
 import FooterComponent from "./components/FooterComponent";
@@ -29,13 +29,15 @@ class App extends Component {
     render() {
         return (
             <div ref={this.contextRef}>
-                <section id="home"></section>
-                <Sticky context={this.contextRef}>
-                    <NavbarComponent openModal={this.openModal} />
-                </Sticky>
-                <JumbotronComponent />
-                <section id="about"></section>
-                <AboutComponent openModal={this.openModal} />
+                <section id="home">
+                    <Sticky context={this.contextRef}>
+                        <NavbarComponent openModal={this.openModal} />
+                    </Sticky>
+                    <JumbotronComponent />
+                </section>
+                <section id="about" style={{ paddingTop: 50 }}>
+                    <AboutMeComponent openModal={this.openModal} />
+                </section>
                 {this.state.modalOpen ? (
                     <ResumeModalComponent
                         modalOpen={this.state.modalOpen}
@@ -44,10 +46,12 @@ class App extends Component {
                         downloadResume={this.downloadResume}
                     />
                 ) : null}
-                <section id="project-examples"></section>
-                <ProjectExamplesComponent />
-                <section id="reach-out"></section>
-                <ContactMeComponent />
+                <section id="project-examples" style={{ paddingTop: 50 }}>
+                    <ProjectExamplesComponent />
+                </section>
+                <section id="reach-out" style={{ paddingTop: 50 }}>
+                    <ContactMeComponent />
+                </section>
                 <FooterComponent />
             </div>
         );
