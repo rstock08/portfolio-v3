@@ -15,13 +15,25 @@ export default class JumbotronComponent extends Component {
         titleIndex: 0,
         animation: "fade down",
         duration: 500,
-        visible: false
+        visible: false,
+        visibleTitle: false
     };
 
     componentDidMount() {
         console.log("Title component has mounted!");
-        this.setState({ visible: true });
+        this.setState({ visible: true, visibleTitle: true });
         this.animateTitles();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (
+            prevState.visibleTitle !== this.state.visibleTitle &&
+            this.state.visibleTitle === false
+        ) {
+            setTimeout(() => {
+                this.titleIterator();
+            }, 4000);
+        }
     }
 
     componentWillUnmount() {
@@ -30,16 +42,20 @@ export default class JumbotronComponent extends Component {
     }
 
     animateTitles = () => {
-        // Causes a small memory leak because if the component is unmounted setInterval is still going to fire after 4 seconds
-        this.titleInterval = setInterval(() => {
-            //setInterval(()=>{
-            if (this.state.titleIndex < 4) {
-                this.setState({ titleIndex: (this.state.titleIndex += 1) });
-            } else {
-                this.setState({ titleIndex: 0 });
-            }
+        this.titleIntervals = setInterval(() => {
+            this.setState({
+                visibleTitle: !this.state.visibleTitle
+            });
         }, 4000);
-        console.log("this.titleInterval" + this.titleInterval);
+    };
+
+    titleIterator = () => {
+        console.log("Title Change");
+        if (this.state.titleIndex < 4) {
+            this.setState({ titleIndex: (this.state.titleIndex += 1) });
+        } else {
+            this.setState({ titleIndex: 0 });
+        }
     };
 
     render() {
@@ -49,7 +65,7 @@ export default class JumbotronComponent extends Component {
             <div
                 className="jumbotron jumbotron-fluid"
                 style={{
-                    paddingBottom: 500,
+                    paddingBottom: 200,
                     marginTop: -120,
                     backgroundImage: `url(${Background})`,
                     backgroundSize: "cover",
@@ -64,7 +80,7 @@ export default class JumbotronComponent extends Component {
                     >
                         <h1
                             style={{
-                                marginTop: 200,
+                                marginTop: 300,
                                 fontSize: 60,
                                 color: "#ebeae8",
                                 textShadow: "-2px 1px 1px #383736"
@@ -74,9 +90,10 @@ export default class JumbotronComponent extends Component {
                         </h1>
                     </Transition>
                     <Transition
-                        visible={this.state.visible}
+                        visible={this.state.visibleTitle}
                         animation="fly right"
                         duration={4000}
+                        unmountOnHide={true}
                     >
                         <p
                             style={{
