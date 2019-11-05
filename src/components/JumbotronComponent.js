@@ -14,14 +14,18 @@ export default class JumbotronComponent extends Component {
     state = {
         titleIndex: 0,
         animation: "fade down",
-        duration: 500,
         visible: false,
-        visibleTitle: false
+        visibleTitle: false,
+        titleAnimationDuration: 4000,
+        titleAnimation: "fly right"
     };
 
     componentDidMount() {
         console.log("Title component has mounted!");
-        this.setState({ visible: true, visibleTitle: true });
+        this.setState({
+            visible: true,
+            visibleTitle: true
+        });
         this.animateTitles();
     }
 
@@ -30,9 +34,15 @@ export default class JumbotronComponent extends Component {
             prevState.visibleTitle !== this.state.visibleTitle &&
             this.state.visibleTitle === false
         ) {
+            if (this.state.titleAnimationDuration !== 1000) {
+                this.setState({
+                    titleAnimation: "slide up",
+                    titleAnimationDuration: 1000
+                });
+            }
             setTimeout(() => {
                 this.titleIterator();
-            }, 4000);
+            }, this.state.titleAnimationDuration);
         }
     }
 
@@ -46,7 +56,7 @@ export default class JumbotronComponent extends Component {
             this.setState({
                 visibleTitle: !this.state.visibleTitle
             });
-        }, 4000);
+        }, 2000);
     };
 
     titleIterator = () => {
@@ -59,8 +69,6 @@ export default class JumbotronComponent extends Component {
     };
 
     render() {
-        const title = TITLES[this.state.titleIndex];
-
         return (
             <div
                 className="jumbotron jumbotron-fluid"
@@ -91,9 +99,8 @@ export default class JumbotronComponent extends Component {
                     </Transition>
                     <Transition
                         visible={this.state.visibleTitle}
-                        animation="fly right"
-                        duration={4000}
-                        unmountOnHide={true}
+                        animation={this.state.titleAnimation}
+                        duration={this.state.titleAnimationDuration}
                     >
                         <p
                             style={{
@@ -102,7 +109,7 @@ export default class JumbotronComponent extends Component {
                                 textShadow: "-2px 1px 1px #383736"
                             }}
                         >
-                            {title}
+                            {TITLES[this.state.titleIndex]}
                         </p>
                     </Transition>
                     <Transition
