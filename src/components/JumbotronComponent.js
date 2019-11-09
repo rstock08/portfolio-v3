@@ -15,7 +15,6 @@ export default class JumbotronComponent extends Component {
         titleIndex: 0,
         animation: "fade down",
         visible: false,
-        visibleTitle: false,
         titleAnimationDuration: 4000,
         titleAnimation: "fly right"
     };
@@ -34,12 +33,6 @@ export default class JumbotronComponent extends Component {
             prevState.visibleTitle !== this.state.visibleTitle &&
             this.state.visibleTitle === false
         ) {
-            if (this.state.titleAnimationDuration !== 1000) {
-                this.setState({
-                    titleAnimation: "slide up",
-                    titleAnimationDuration: 1000
-                });
-            }
             setTimeout(() => {
                 this.titleIterator();
             }, this.state.titleAnimationDuration);
@@ -98,7 +91,7 @@ export default class JumbotronComponent extends Component {
                         </h1>
                     </Transition>
                     <Transition
-                        visible={this.state.visibleTitle}
+                        visible={this.state.visible}
                         animation={this.state.titleAnimation}
                         duration={this.state.titleAnimationDuration}
                     >
