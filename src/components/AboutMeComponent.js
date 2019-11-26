@@ -1,12 +1,4 @@
-import {
-    Container,
-    Header,
-    Grid,
-    Image,
-    GridRow,
-    GridColumn,
-    Button
-} from "semantic-ui-react";
+import { Grid, GridRow, GridColumn } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export default class AboutMeComponent extends Component {

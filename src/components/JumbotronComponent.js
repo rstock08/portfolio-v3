@@ -15,7 +15,7 @@ export default class JumbotronComponent extends Component {
         titleIndex: 0,
         animation: "fade down",
         visible: false,
-        titleAnimationDuration: 4000,
+        titleAnimationDuration: 3000,
         titleAnimation: "fly right"
     };
 
@@ -76,8 +76,8 @@ export default class JumbotronComponent extends Component {
                 <div className="container">
                     <Transition
                         visible={this.state.visible}
-                        animation="fly down"
-                        duration={1500}
+                        animation="slide down"
+                        duration={2000}
                     >
                         <h1
                             style={{
@@ -108,7 +108,7 @@ export default class JumbotronComponent extends Component {
                     <Transition
                         visible={this.state.visible}
                         animation="fly right"
-                        duration={4000}
+                        duration={3000}
                     >
                         <p
                             style={{

@@ -17,8 +17,8 @@ export default class NavbarComponent extends Component {
         return (
             <Transition
                 visible={this.state.visible}
-                animation="fly down"
-                duration={3000}
+                animation="slide down"
+                duration={1300}
             >
                 <div style={{ backgroundColor: "black" }}>
                     <Segment inverted>
