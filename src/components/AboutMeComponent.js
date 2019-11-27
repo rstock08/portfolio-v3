@@ -1,7 +1,9 @@
-import { Grid, GridRow, GridColumn } from "semantic-ui-react";
+import { Grid, GridRow, GridColumn, Progress } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export default class AboutMeComponent extends Component {
+    state = { htmlPercent: 85, cssPercent: 75, javascriptPercent: 80 };
+
     render() {
         return (
             <Grid>
@@ -19,7 +21,12 @@ export default class AboutMeComponent extends Component {
                     </GridColumn>
                 </GridRow>
                 <GridRow>
-                    <GridColumn></GridColumn>
+                    <GridColumn>
+                        <Progress percent={44} progress />
+                        <Progress percent={44} progress />
+                        <Progress percent={44} progress />
+                        <Progress percent={44} progress />
+                    </GridColumn>
                 </GridRow>
             </Grid>
         );

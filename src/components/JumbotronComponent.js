@@ -66,8 +66,8 @@ export default class JumbotronComponent extends Component {
             <div
                 className="jumbotron jumbotron-fluid"
                 style={{
-                    paddingBottom: 200,
-                    marginTop: -120,
+                    paddingBottom: 300,
+                    marginTop: -180,
                     backgroundImage: `url(${Background})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center center"
