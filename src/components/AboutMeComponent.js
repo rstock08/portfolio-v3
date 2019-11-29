@@ -1,4 +1,11 @@
-import { Grid, GridRow, GridColumn, Progress } from "semantic-ui-react";
+import {
+    Grid,
+    GridRow,
+    GridColumn,
+    Progress,
+    Image,
+    Button
+} from "semantic-ui-react";
 import React, { Component } from "react";
 
 export default class AboutMeComponent extends Component {
@@ -21,11 +28,97 @@ export default class AboutMeComponent extends Component {
                     </GridColumn>
                 </GridRow>
                 <GridRow>
-                    <GridColumn>
-                        <Progress percent={44} progress />
-                        <Progress percent={44} progress />
-                        <Progress percent={44} progress />
-                        <Progress percent={44} progress />
+                    <GridColumn
+                        mobile={16}
+                        tablet={8}
+                        computer={8}
+                        largeScreen={8}
+                        widescreen={8}
+                    >
+                        <Image
+                            src={require("/resources/profile.png")}
+                            size="medium"
+                            centered
+                            circular
+                        />
+                    </GridColumn>
+                    <GridColumn
+                        mobile={16}
+                        tablet={4}
+                        computer={4}
+                        largeScreen={4}
+                        widescreen={4}
+                    >
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                            label="Label"
+                        />
+                    </GridColumn>
+                    <GridColumn
+                        mobile={16}
+                        tablet={8}
+                        computer={4}
+                        largeScreen={4}
+                        widescreen={4}
+                    >
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                        />
+                        <Progress
+                            style={{ height: "auto" }}
+                            percent={44}
+                            color="yellow"
+                            label="Label"
+                        />
                     </GridColumn>
                 </GridRow>
             </Grid>
