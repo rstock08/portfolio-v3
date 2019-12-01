@@ -16,10 +16,114 @@ export default class AboutMeComponent extends Component {
         htmlPercent: 85,
         cssPercent: 75,
         javascriptPercent: 80,
-        activeItem: "Frontend Development"
+        activeFilter: "Frontend Development",
+        progress: {
+            frontend: {
+                HTML: 95,
+                CSS: 70,
+                JavaScript: 75,
+                ReactJS: 80
+            },
+            backend: {
+                Java: 75,
+                CSharp: 75,
+                PostgreSQL: 75,
+                MySQL: 75
+            },
+            technologies: {
+                Jira: 80,
+                Confluence: 80,
+                Docker: 65,
+                AWS: 30
+            }
+        }
     };
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+    handleItemClick = (e, { name }) => this.setState({ activeFilter: name });
+
+    progressBars = () => {
+        if (this.state.activeFilter === "Frontend Development") {
+            return (
+                <div>
+                    1
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    test3
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    test4
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    Test5
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                </div>
+            );
+        } else if (this.state.activeFilter === "Backend Development") {
+            return (
+                <div>
+                    test8
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                    <Progress
+                        style={{ height: "auto" }}
+                        percent={44}
+                        color="yellow"
+                    />
+                </div>
+            );
+        }
+    };
 
     render() {
         return (
@@ -85,7 +189,7 @@ export default class AboutMeComponent extends Component {
                                 <Menu.Item
                                     name="Frontend Development"
                                     active={
-                                        this.state.activeItem ===
+                                        this.state.activeFilter ===
                                         "Frontend Development"
                                     }
                                     onClick={this.handleItemClick}
@@ -93,7 +197,7 @@ export default class AboutMeComponent extends Component {
                                 <Menu.Item
                                     name="Backend Development"
                                     active={
-                                        this.state.activeItem ===
+                                        this.state.activeFilter ===
                                         "Backend Development"
                                     }
                                     onClick={this.handleItemClick}
@@ -101,52 +205,13 @@ export default class AboutMeComponent extends Component {
                                 <Menu.Item
                                     name="Technologies"
                                     active={
-                                        this.state.activeItem === "Technologies"
+                                        this.state.activeFilter ===
+                                        "Technologies"
                                     }
                                     onClick={this.handleItemClick}
                                 />
                             </Menu>
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                                label="Label"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
-                            <Progress
-                                style={{ height: "auto" }}
-                                percent={44}
-                                color="yellow"
-                            />
+                            {this.progressBars()}
                         </Segment>
                     </GridColumn>
                 </GridRow>
