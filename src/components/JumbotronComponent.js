@@ -69,6 +69,7 @@ export default class JumbotronComponent extends Component {
                     paddingBottom: 300,
                     marginTop: -180,
                     backgroundImage: `url(${Background})`,
+                    backgroundBlendMode: "luminosity",
                     backgroundSize: "cover",
                     backgroundPosition: "center center"
                 }}
