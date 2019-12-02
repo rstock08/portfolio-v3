@@ -19,22 +19,22 @@ export default class AboutMeComponent extends Component {
         activeFilter: "Frontend Development",
         progress: {
             frontend: {
-                HTML: 95,
-                CSS: 70,
-                JavaScript: 75,
-                ReactJS: 80
+                HTML: ["HTML", 95],
+                CSS: ["CSS", 70],
+                JavaScript: ["JavaScript", 75],
+                ReactJS: ["ReactJS", 80]
             },
             backend: {
-                Java: 75,
-                CSharp: 75,
-                PostgreSQL: 75,
-                MySQL: 75
+                Java: ["Java", 75],
+                CSharp: ["C#", 75],
+                PostgreSQL: ["PostgreSQL", 75],
+                MySQL: ["MySQL", 75]
             },
             technologies: {
-                Jira: 80,
-                Confluence: 80,
-                Docker: 65,
-                AWS: 30
+                Jira: ["Jira", 80],
+                Confluence: ["Confluence", 80],
+                Docker: ["Docker", 75],
+                AWS: ["Amazon Web Services (AWS)", 30]
             }
         }
     };
@@ -45,28 +45,44 @@ export default class AboutMeComponent extends Component {
         if (this.state.activeFilter === "Frontend Development") {
             return (
                 <div>
-                    1
+                    {this.state.progress.frontend.HTML[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.frontend.HTML[1]}
                         color="yellow"
                     />
-                    test3
+                    {this.state.progress.frontend.CSS[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.frontend.CSS[1]}
                         color="yellow"
                     />
-                    test4
+                    {this.state.progress.frontend.JavaScript[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.frontend.JavaScript[1]}
                         color="yellow"
                     />
-                    Test5
+                    {this.state.progress.frontend.ReactJS[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.frontend.ReactJS[1]}
                         color="yellow"
                     />
                 </div>
@@ -74,25 +90,44 @@ export default class AboutMeComponent extends Component {
         } else if (this.state.activeFilter === "Backend Development") {
             return (
                 <div>
-                    test8
+                    {this.state.progress.backend.Java[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.backend.Java[1]}
                         color="yellow"
                     />
+                    {this.state.progress.backend.CSharp[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.backend.CSharp[1]}
                         color="yellow"
                     />
+                    {this.state.progress.backend.PostgreSQL[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.backend.PostgreSQL[1]}
                         color="yellow"
                     />
+                    {this.state.progress.backend.MySQL[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.backend.MySQL[1]}
                         color="yellow"
                     />
                 </div>
@@ -100,24 +135,84 @@ export default class AboutMeComponent extends Component {
         } else {
             return (
                 <div>
+                    {this.state.progress.technologies.Jira[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.Jira[1]}
                         color="yellow"
                     />
+                    {this.state.progress.technologies.Confluence[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.Confluence[1]}
                         color="yellow"
                     />
+                    {this.state.progress.technologies.Docker[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.Docker[1]}
                         color="yellow"
                     />
+                    {this.state.progress.technologies.AWS[0]}
                     <Progress
-                        style={{ height: "auto" }}
-                        percent={44}
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.AWS[1]}
+                        color="yellow"
+                    />
+                    {this.state.progress.technologies.AWS[0]}
+                    <Progress
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.AWS[1]}
+                        color="yellow"
+                    />
+                    {this.state.progress.technologies.AWS[0]}
+                    <Progress
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.AWS[1]}
+                        color="yellow"
+                    />
+                    {this.state.progress.technologies.AWS[0]}
+                    <Progress
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.AWS[1]}
+                        color="yellow"
+                    />
+                    {this.state.progress.technologies.AWS[0]}
+                    <Progress
+                        style={{
+                            height: "auto",
+                            marginTop: "2%",
+                            marginBottom: "2%"
+                        }}
+                        percent={this.state.progress.technologies.AWS[1]}
                         color="yellow"
                     />
                 </div>
@@ -184,8 +279,14 @@ export default class AboutMeComponent extends Component {
                         largeScreen={8}
                         widescreen={8}
                     >
-                        <Segment>
-                            <Menu pointing secondary>
+                        <Segment
+                            style={{
+                                marginTop: "-4%",
+                                marginLeft: "10%",
+                                marginRight: "10%"
+                            }}
+                        >
+                            <Menu pointing secondary widths={3}>
                                 <Menu.Item
                                     name="Frontend Development"
                                     active={
