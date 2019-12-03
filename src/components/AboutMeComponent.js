@@ -13,214 +13,53 @@ import React, { Component } from "react";
 
 export default class AboutMeComponent extends Component {
     state = {
-        htmlPercent: 85,
-        cssPercent: 75,
-        javascriptPercent: 80,
         activeFilter: "Frontend Development",
-        progress: {
+        progressBars: {
             frontend: {
-                HTML: ["HTML", 95],
-                CSS: ["CSS", 70],
-                JavaScript: ["JavaScript", 75],
-                ReactJS: ["ReactJS", 80]
+                HTML: 95,
+                CSS: 70,
+                JavaScript: 75,
+                ReactJS: 80
             },
             backend: {
-                Java: ["Java", 75],
-                CSharp: ["C#", 75],
-                PostgreSQL: ["PostgreSQL", 75],
-                MySQL: ["MySQL", 75]
+                Java: 75,
+                CSharp: 75,
+                PostgreSQL: 75,
+                MySQL: 75
             },
             technologies: {
-                Jira: ["Jira", 80],
-                Confluence: ["Confluence", 80],
-                Docker: ["Docker", 75],
-                AWS: ["Amazon Web Services (AWS)", 30]
+                Jira: 80,
+                Confluence: 80,
+                Docker: 75,
+                AWS: 30
             }
         }
     };
 
     handleItemClick = (e, { name }) => this.setState({ activeFilter: name });
 
-    progressBars = () => {
-        if (this.state.activeFilter === "Frontend Development") {
+    progressBars = object => {
+        Object.keys(object).map(function(key) {
             return (
                 <div>
-                    {this.state.progress.frontend.HTML[0]}
+                    {key}
                     <Progress
                         style={{
                             height: "auto",
                             marginTop: "2%",
                             marginBottom: "2%"
                         }}
-                        percent={this.state.progress.frontend.HTML[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.frontend.CSS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.frontend.CSS[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.frontend.JavaScript[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.frontend.JavaScript[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.frontend.ReactJS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.frontend.ReactJS[1]}
+                        percent={object[key]}
                         color="yellow"
                     />
                 </div>
             );
-        } else if (this.state.activeFilter === "Backend Development") {
-            return (
-                <div>
-                    {this.state.progress.backend.Java[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.backend.Java[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.backend.CSharp[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.backend.CSharp[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.backend.PostgreSQL[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.backend.PostgreSQL[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.backend.MySQL[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.backend.MySQL[1]}
-                        color="yellow"
-                    />
-                </div>
-            );
-        } else {
-            return (
-                <div>
-                    {this.state.progress.technologies.Jira[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.Jira[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.Confluence[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.Confluence[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.Docker[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.Docker[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.AWS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.AWS[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.AWS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.AWS[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.AWS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.AWS[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.AWS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.AWS[1]}
-                        color="yellow"
-                    />
-                    {this.state.progress.technologies.AWS[0]}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={this.state.progress.technologies.AWS[1]}
-                        color="yellow"
-                    />
-                </div>
-            );
-        }
+        });
     };
 
     render() {
+        const progressBars = this.state.progressBars;
+
         return (
             <Grid>
                 <GridRow>
@@ -269,7 +108,9 @@ export default class AboutMeComponent extends Component {
                             </p>
                             <br />
                             <p>Remember to check out my resume!</p>
-                            <Button>Resume</Button>
+                            <Button onClick={this.props.openModal}>
+                                Resume
+                            </Button>
                         </Segment>
                     </GridColumn>
                     <GridColumn
@@ -281,7 +122,6 @@ export default class AboutMeComponent extends Component {
                     >
                         <Segment
                             style={{
-                                marginTop: "-4%",
                                 marginLeft: "10%",
                                 marginRight: "10%"
                             }}
@@ -312,7 +152,13 @@ export default class AboutMeComponent extends Component {
                                     onClick={this.handleItemClick}
                                 />
                             </Menu>
-                            {this.progressBars()}
+                            {this.state.activeFilter === "Frontend Development"
+                                ? this.progressBars(progressBars.frontend)
+                                : this.state.activeFilter === "Backend Development"
+                                ? this.progressBars(progressBars.frontend)
+                                : this.state.activeFilter === "Technologies"
+                                ? this.progressBars(progressBars.technologies)
+                                : null}
                         </Segment>
                     </GridColumn>
                 </GridRow>
