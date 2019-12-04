@@ -100,9 +100,20 @@ export default class AboutMeComponent extends Component {
                             </p>
                             <br />
                             <p>Remember to check out my resume!</p>
-                            <Button onClick={this.props.openModal}>
-                                Resume
-                            </Button>
+                            <Button.Group>
+                                <Button onClick={this.props.openModal}>
+                                    Resume
+                                </Button>
+                                <Button.Or />
+                                <Button
+                                    style={{
+                                        backgroundColor: "#fbbd08",
+                                        color: "white"
+                                    }}
+                                >
+                                    Projects
+                                </Button>
+                            </Button.Group>
                         </Segment>
                     </GridColumn>
                     <GridColumn

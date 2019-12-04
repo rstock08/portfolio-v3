@@ -35,7 +35,7 @@ class App extends Component {
                     </Sticky>
                     <JumbotronComponent />
                 </section>
-                <section id="about" style={{ paddingTop: 50 }}>
+                <section id="about" style={{ paddingTop: 100, marginTop: -75 }}>
                     <AboutMeComponent openModal={this.openModal} />
                 </section>
                 {this.state.modalOpen ? (
@@ -46,10 +46,10 @@ class App extends Component {
                         downloadResume={this.downloadResume}
                     />
                 ) : null}
-                <section id="project-examples" style={{ paddingTop: 50 }}>
-                    <ProjectExamplesComponent />
-                </section>
-                <section id="reach-out" style={{ paddingTop: 50 }}>
+                <section
+                    id="contact-me"
+                    style={{ paddingTop: 100, marginTop: -75 }}
+                >
                     <ContactMeComponent />
                 </section>
                 <FooterComponent />

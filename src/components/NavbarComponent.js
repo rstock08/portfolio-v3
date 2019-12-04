@@ -36,15 +36,15 @@ export default class NavbarComponent extends Component {
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
-                                href="#project-examples"
-                                name="project-examples"
-                                active={activeItem === "project-examples"}
+                                href="#contact-me"
+                                name="contact-me"
+                                active={activeItem === "contact-me"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
-                                href="#reach-out"
-                                name="reach-out"
-                                active={activeItem === "reach-out"}
+                                href="#project-examples"
+                                name="project-examples"
+                                active={activeItem === "project-examples"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item position="right">
