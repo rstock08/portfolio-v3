@@ -66,8 +66,7 @@ export default class JumbotronComponent extends Component {
             <div
                 className="jumbotron jumbotron-fluid"
                 style={{
-                    paddingBottom: 300,
-                    marginTop: -180,
+                    paddingBottom: "20%",
                     backgroundImage: `url(${Background})`,
                     backgroundBlendMode: "luminosity",
                     backgroundSize: "cover",
@@ -82,7 +81,7 @@ export default class JumbotronComponent extends Component {
                     >
                         <h1
                             style={{
-                                marginTop: 300,
+                                marginTop: "15%",
                                 fontSize: 60,
                                 color: "#ebeae8",
                                 textShadow: "-2px 1px 1px #383736"

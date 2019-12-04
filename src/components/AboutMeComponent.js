@@ -38,25 +38,6 @@ export default class AboutMeComponent extends Component {
 
     handleItemClick = (e, { name }) => this.setState({ activeFilter: name });
 
-    progressBars = object => {
-        Object.keys(object).map(function(key) {
-            return (
-                <div>
-                    {key}
-                    <Progress
-                        style={{
-                            height: "auto",
-                            marginTop: "2%",
-                            marginBottom: "2%"
-                        }}
-                        percent={object[key]}
-                        color="yellow"
-                    />
-                </div>
-            );
-        });
-    };
-
     progressBarsToDisplay = () => {
         if (this.state.activeFilter === "Frontend Development") {
             return this.state.progressBars.frontend;
@@ -74,7 +55,7 @@ export default class AboutMeComponent extends Component {
             <Grid>
                 <GridRow>
                     <GridColumn>
-                        <Divider horizontal>
+                        <Divider horizontal style={{ marginRight: -20 }}>
                             <h1
                                 style={{
                                     fontSize: 50,
@@ -102,6 +83,7 @@ export default class AboutMeComponent extends Component {
                             circular
                         />
                         <Segment
+                            basic
                             style={{
                                 marginLeft: "10%",
                                 marginRight: "10%",
@@ -131,6 +113,7 @@ export default class AboutMeComponent extends Component {
                         widescreen={8}
                     >
                         <Segment
+                            basic
                             style={{
                                 marginLeft: "10%",
                                 marginRight: "10%"
@@ -138,6 +121,7 @@ export default class AboutMeComponent extends Component {
                         >
                             <Menu pointing secondary widths={3}>
                                 <Menu.Item
+                                    key={"Frontend Development"}
                                     name="Frontend Development"
                                     active={
                                         this.state.activeFilter ===
@@ -146,6 +130,7 @@ export default class AboutMeComponent extends Component {
                                     onClick={this.handleItemClick}
                                 />
                                 <Menu.Item
+                                    key={"Backend Development"}
                                     name="Backend Development"
                                     active={
                                         this.state.activeFilter ===
@@ -154,6 +139,7 @@ export default class AboutMeComponent extends Component {
                                     onClick={this.handleItemClick}
                                 />
                                 <Menu.Item
+                                    key={"Technologies"}
                                     name="Technologies"
                                     active={
                                         this.state.activeFilter ===
@@ -169,6 +155,7 @@ export default class AboutMeComponent extends Component {
                                     <div>
                                         {key}
                                         <Progress
+                                            key={key}
                                             style={{
                                                 height: "auto",
                                                 marginTop: "2%",
