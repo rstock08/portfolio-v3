@@ -57,8 +57,18 @@ export default class AboutMeComponent extends Component {
         });
     };
 
+    progressBarsToDisplay = () => {
+        if (this.state.activeFilter === "Frontend Development") {
+            return this.state.progressBars.frontend;
+        } else if (this.state.activeFilter === "Backend Development") {
+            return this.state.progressBars.backend;
+        } else {
+            return this.state.progressBars.technologies;
+        }
+    };
+
     render() {
-        const progressBars = this.state.progressBars;
+        const displayProgressBars = this.progressBarsToDisplay();
 
         return (
             <Grid>
@@ -152,13 +162,24 @@ export default class AboutMeComponent extends Component {
                                     onClick={this.handleItemClick}
                                 />
                             </Menu>
-                            {this.state.activeFilter === "Frontend Development"
-                                ? this.progressBars(progressBars.frontend)
-                                : this.state.activeFilter === "Backend Development"
-                                ? this.progressBars(progressBars.frontend)
-                                : this.state.activeFilter === "Technologies"
-                                ? this.progressBars(progressBars.technologies)
-                                : null}
+                            {Object.keys(displayProgressBars).map(function(
+                                key
+                            ) {
+                                return (
+                                    <div>
+                                        {key}
+                                        <Progress
+                                            style={{
+                                                height: "auto",
+                                                marginTop: "2%",
+                                                marginBottom: "2%"
+                                            }}
+                                            percent={displayProgressBars[key]}
+                                            color="yellow"
+                                        />
+                                    </div>
+                                );
+                            })}
                         </Segment>
                     </GridColumn>
                 </GridRow>
