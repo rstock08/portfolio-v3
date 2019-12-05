@@ -19,10 +19,11 @@ export default class ContactMeComponent extends Component {
             <Grid
                 centered
                 style={{
+                    paddingTop: 50,
                     backgroundColor: "#FEFBDF"
                 }}
             >
-                <GridRow>
+                <GridRow style={{ paddingBottom: 50 }}>
                     <GridColumn
                         centered
                         mobile={16}

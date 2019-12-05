@@ -1,19 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Menu, Segment, Transition } from "semantic-ui-react";
 import SocialMediaComponent from "./SocialMediaComponent";
 
 export default class NavbarComponent extends Component {
-    state = { activeItem: "home", visible: false };
+    state = { visible: false };
 
     componentDidMount() {
         this.setState({ visible: true });
     }
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+    handleItemClick = (e, { name }) => {
+        this.props.changeActiveMenuItem(e.name);
+    };
 
     render() {
-        const { activeItem } = this.state;
-
         return (
             <Transition
                 visible={this.state.visible}
@@ -22,29 +23,24 @@ export default class NavbarComponent extends Component {
             >
                 <div style={{ backgroundColor: "black" }}>
                     <Segment inverted>
-                        <Menu stackable inverted pointing secondary widths={5}>
+                        <Menu stackable inverted pointing secondary widths={4}>
                             <Menu.Item
-                                href="#home"
+                                as={Link}
+                                to="home"
                                 name="home"
-                                active={activeItem === "home"}
+                                active={this.props.activeItem === "home"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
                                 href="#about"
                                 name="about"
-                                active={activeItem === "about"}
+                                active={this.props.activeItem === "about"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
                                 href="#contact-me"
                                 name="contact-me"
-                                active={activeItem === "contact-me"}
-                                onClick={this.handleItemClick}
-                            />
-                            <Menu.Item
-                                href="#project-examples"
-                                name="project-examples"
-                                active={activeItem === "project-examples"}
+                                active={this.props.activeItem === "contact-me"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item position="right">
