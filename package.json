@@ -17,6 +17,10 @@
         "semantic-ui-css": "^2.4.1",
         "semantic-ui-react": "^0.88.1"
     },
+    "engines": {
+        "npm": "6.4.1",
+        "node": "10.15.0"
+    },
     "scripts": {
         "dev": "parcel src/index.html",
         "build": "parcel build src/index.html",
