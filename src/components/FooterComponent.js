@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Grid, GridRow, GridColumn, Icon } from "semantic-ui-react";
+import { Grid, GridRow } from "semantic-ui-react";
 
 export default class FooterComponent extends Component {
     backToTop = () => {

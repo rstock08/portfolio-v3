@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Menu, Segment, Transition } from "semantic-ui-react";
 import SocialMediaComponent from "./SocialMediaComponent";
 
@@ -25,22 +24,23 @@ export default class NavbarComponent extends Component {
                     <Segment inverted>
                         <Menu stackable inverted pointing secondary widths={4}>
                             <Menu.Item
-                                as={Link}
-                                to="home"
+                                href="#home"
                                 name="home"
-                                active={this.props.activeItem === "home"}
+                                active={this.props.activeMenuItem === "home"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
                                 href="#about"
                                 name="about"
-                                active={this.props.activeItem === "about"}
+                                active={this.props.activeMenuItem === "about"}
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item
                                 href="#contact-me"
                                 name="contact-me"
-                                active={this.props.activeItem === "contact-me"}
+                                active={
+                                    this.props.activeMenuItem === "contact-me"
+                                }
                                 onClick={this.handleItemClick}
                             />
                             <Menu.Item position="right">

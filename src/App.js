@@ -23,7 +23,7 @@ class App extends Component {
     closeModal = () => this.setState({ modalOpen: false });
 
     openModal = () => this.setState({ modalOpen: true });
-    
+
     downloadResume = () => {
         console.log("Downloading pdf");
         <DownloadLink
@@ -37,21 +37,24 @@ class App extends Component {
     render() {
         return (
             <div ref={this.contextRef}>
+                <Waypoint
+                    id="home"
+                    onEnter={() => this.setState({ activeMenuItem: "home" })}
+                />
                 <section id="home">
                     <Sticky context={this.contextRef}>
                         <NavbarComponent
-                            openModal={
-                                (this.openModal,
-                                this.state.activeMenuItem,
-                                this.changeActiveMenuItem)
-                            }
+                            openModal={this.openModal}
+                            activeMenuItem={this.state.activeMenuItem}
+                            changeActiveMenuItem={this.changeActiveMenuItem}
                         />
                     </Sticky>
                     <JumbotronComponent />
-                    <Waypoint onEnter={this.changeActiveMenuItem("home")} />
                 </section>
+                <Waypoint
+                    onEnter={() => this.setState({ activeMenuItem: "about" })}
+                />
                 <section id="about" style={{ paddingTop: 100, marginTop: -75 }}>
-                    <Waypoint onEnter={this.changeActiveMenuItem("about")} />
                     <AboutMeComponent openModal={this.openModal} />
                 </section>
                 {this.state.modalOpen ? (
@@ -62,13 +65,15 @@ class App extends Component {
                         downloadResume={this.downloadResume}
                     />
                 ) : null}
+                <Waypoint
+                    onEnter={() =>
+                        this.setState({ activeMenuItem: "contact-me" })
+                    }
+                />
                 <section
                     id="contact-me"
                     style={{ paddingTop: 100, marginTop: -75 }}
                 >
-                    <Waypoint
-                        onEnter={this.changeActiveMenuItem("contact-me")}
-                    />
                     <ContactMeComponent />
                 </section>
                 <FooterComponent />

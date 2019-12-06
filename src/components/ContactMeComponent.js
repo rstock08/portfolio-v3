@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
     Grid,
@@ -25,7 +24,6 @@ export default class ContactMeComponent extends Component {
             >
                 <GridRow style={{ paddingBottom: 50 }}>
                     <GridColumn
-                        centered
                         mobile={16}
                         tablet={16}
                         computer={16}
@@ -48,7 +46,6 @@ export default class ContactMeComponent extends Component {
                 </GridRow>
                 <GridRow>
                     <GridColumn
-                        centered
                         mobile={14}
                         tablet={10}
                         computer={10}
