@@ -15,7 +15,9 @@
         "react-waypoint": "^9.0.2",
         "reactstrap": "^8.1.1",
         "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^0.88.1"
+        "semantic-ui-react": "^0.88.1",
+        "@babel/core": "^7.6.4",
+        "@babel/preset-env": "^7.6.3"
     },
     "engines": {
         "npm": "6.4.1",
@@ -26,8 +28,5 @@
         "build": "parcel build src/index.html",
         "start": "npm run build  && live-server dist"
     },
-    "devDependencies": {
-        "@babel/core": "^7.6.4",
-        "@babel/preset-env": "^7.6.3"
-    }
+    "devDependencies": {}
 }
