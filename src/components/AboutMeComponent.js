@@ -53,9 +53,9 @@ export default class AboutMeComponent extends Component {
 
         return (
             <Grid>
-                <GridRow>
+                <GridRow centered>
                     <GridColumn>
-                        <Divider horizontal style={{}}>
+                        <Divider horizontal style={{ marginRight: -20 }}>
                             <h1
                                 style={{
                                     fontSize: 50,
@@ -68,7 +68,7 @@ export default class AboutMeComponent extends Component {
                         </Divider>
                     </GridColumn>
                 </GridRow>
-                <GridRow>
+                <GridRow centered>
                     <GridColumn
                         mobile={16}
                         tablet={8}
