@@ -55,7 +55,7 @@ export default class AboutMeComponent extends Component {
             <Grid>
                 <GridRow centered>
                     <GridColumn>
-                        <Divider horizontal style={{ marginRight: -20 }}>
+                        <Divider horizontal style={{}}>
                             <h1
                                 style={{
                                     fontSize: 50,
