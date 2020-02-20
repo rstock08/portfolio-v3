@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Background from "/resources/England-Jumbotron.jpg";
-import { Transition } from "semantic-ui-react";
+import { Grid, Image, Transition, Divider } from "semantic-ui-react";
 
 const TITLES = [
     "A Software Engineer.",
@@ -10,7 +9,7 @@ const TITLES = [
     "An innovator."
 ];
 
-export default class JumbotronComponent extends Component {
+export default class ProfileComponent extends Component {
     state = {
         titleIndex: 0,
         animation: "fade down",
@@ -63,33 +62,16 @@ export default class JumbotronComponent extends Component {
 
     render() {
         return (
-            <div
-                className="jumbotron jumbotron-fluid"
-                style={{
-                    paddingBottom: "30%",
-                    backgroundImage: `url(${Background})`,
-                    backgroundBlendMode: "luminosity",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center"
-                }}
-            >
-                <div className="container">
-                    <Transition
-                        visible={this.state.visible}
-                        animation="slide down"
-                        duration={2000}
-                    >
-                        <h1
-                            style={{
-                                marginTop: "15%",
-                                fontSize: 60,
-                                color: "#ebeae8",
-                                textShadow: "-2px 1px 1px #383736"
-                            }}
-                        >
-                            Hi, I'm Reed.
-                        </h1>
-                    </Transition>
+            <Grid>
+                <Grid.Column>
+                    <Image
+                        src={require("../Resources/profile.jpg")}
+                        size="medium"
+                        circular
+                        centered
+                    />
+                    <Divider hidden />
+                    <Divider hidden />
                     <Transition
                         visible={this.state.visible}
                         animation={this.state.titleAnimation}
@@ -121,8 +103,8 @@ export default class JumbotronComponent extends Component {
                             challenge!
                         </p>
                     </Transition>
-                </div>
-            </div>
+                </Grid.Column>
+            </Grid>
         );
     }
 }

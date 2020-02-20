@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Popup, Button, Grid, Link } from "semantic-ui-react";
+import { Popup, Button, Grid } from "semantic-ui-react";
 
 export default class SocialMediaComponent extends Component {
     redirectOnClick = (e, data) => {

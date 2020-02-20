@@ -1,33 +1,36 @@
 {
-    "name": "portfolio",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "@babel/plugin-proposal-class-properties": "^7.5.5",
-        "live-server": "^1.2.1",
-        "parcel-bundler": "^1.12.4",
-        "prettier": "^1.18.2",
-        "react": "^16.12.0",
-        "react-dom": "^16.11.0",
-        "react-download-link": "^2.2.0",
-        "react-responsive-carousel": "^3.1.50",
-        "react-router-dom": "^5.1.2",
-        "react-waypoint": "^9.0.2",
-        "reactstrap": "^8.1.1",
-        "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^0.88.1",
-        "@babel/core": "^7.6.4",
-        "@babel/preset-env": "^7.6.3"
-    },
-    "engines": {
-        "npm": "6.4.1",
-        "node": "10.15.0"
-    },
-    "scripts": {
-        "dev": "parcel src/index.html",
-        "start": "parcel src/index.html",
-        "build": "parcel build src/index.html",
-        "startOG": "npm run build  && live-server dist"
-    },
-    "devDependencies": {}
+  "name": "portfolio-v4",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.4.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
