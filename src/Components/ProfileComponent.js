@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Grid, Image, Transition, Divider } from "semantic-ui-react";
+import {
+    Grid,
+    Image,
+    Transition,
+    Divider,
+    Container,
+    GridRow
+} from "semantic-ui-react";
 
 const TITLES = [
     "A Software Engineer.",
@@ -63,47 +70,65 @@ export default class ProfileComponent extends Component {
     render() {
         return (
             <Grid>
-                <Grid.Column>
+                <Divider hidden />
+                <Grid.Row>
                     <Image
                         src={require("../Resources/profile.jpg")}
                         size="medium"
                         circular
                         centered
                     />
-                    <Divider hidden />
-                    <Divider hidden />
-                    <Transition
-                        visible={this.state.visible}
-                        animation={this.state.titleAnimation}
-                        duration={this.state.titleAnimationDuration}
-                    >
-                        <p
-                            style={{
-                                fontSize: 30,
-                                color: "#ebeae8",
-                                textShadow: "-2px 1px 1px #383736"
-                            }}
+                </Grid.Row>
+                <Grid.Row>
+                    <Container textAlign="center">
+                        <Transition
+                            visible={this.state.visible}
+                            animation="slide down"
+                            duration={2000}
                         >
-                            {TITLES[this.state.titleIndex]}
-                        </p>
-                    </Transition>
-                    <Transition
-                        visible={this.state.visible}
-                        animation="fly right"
-                        duration={3000}
-                    >
-                        <p
-                            style={{
-                                fontSize: 30,
-                                color: "#ebeae8",
-                                textShadow: "-2px 1px 1px #383736"
-                            }}
+                            <h1
+                                style={{
+                                    fontSize: 60,
+                                    color: "#ebeae8",
+                                    textShadow: "-2px 1px 1px #383736"
+                                }}
+                            >
+                                Hi, I'm Reed.
+                            </h1>
+                        </Transition>
+                        <Transition
+                            visible={this.state.visible}
+                            animation={this.state.titleAnimation}
+                            duration={this.state.titleAnimationDuration}
                         >
-                            I'm always looking forward to taking on the next
-                            challenge!
-                        </p>
-                    </Transition>
-                </Grid.Column>
+                            <p
+                                style={{
+                                    fontSize: 30,
+                                    color: "#ebeae8",
+                                    textShadow: "-2px 1px 1px #383736"
+                                }}
+                            >
+                                {TITLES[this.state.titleIndex]}
+                            </p>
+                        </Transition>
+                        <Transition
+                            visible={this.state.visible}
+                            animation="fly right"
+                            duration={3000}
+                        >
+                            <p
+                                style={{
+                                    fontSize: 30,
+                                    color: "#ebeae8",
+                                    textShadow: "-2px 1px 1px #383736"
+                                }}
+                            >
+                                I'm always looking forward to taking on the next
+                                challenge!
+                            </p>
+                        </Transition>
+                    </Container>
+                </Grid.Row>
             </Grid>
         );
     }

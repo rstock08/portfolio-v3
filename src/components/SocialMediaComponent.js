@@ -8,13 +8,7 @@ export default class SocialMediaComponent extends Component {
 
     render() {
         return (
-            <Grid
-                style={{
-                    marginTop: -6,
-                    marginBottom: -13
-                }}
-                stackable={false}
-            >
+            <Grid stackable={false}>
                 <Popup
                     content="Take a look at my resume."
                     position="bottom center"

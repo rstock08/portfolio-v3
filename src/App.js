@@ -1,34 +1,62 @@
 // Import react and the component classes
 import React, { Component, createRef } from "react";
+import { Pager } from "react-bootstrap";
 //import { Waypoint } from "react-waypoint";
-import { Grid, Image, Divider } from "semantic-ui-react";
+import ReactPageScroller from "react-page-scroller";
+import { Grid, Divider, Sticky } from "semantic-ui-react";
 import NavbarComponent from "./Components/NavbarComponent";
 import ProfileComponent from "./Components/ProfileComponent";
+import AboutMeComponent from "./Components/AboutMeComponent";
+import ContactMeComponent from "./Components/ContactMeComponent";
 
-// Creating a class called App which uses Component
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { currentPage: null };
+    }
+
+    handlePageChange = number => {
+        this.setState({ currentPage: number }); // set currentPage number, to reset it from the previous selected.
+    };
+
+    getPagesNumbers = () => {
+        const pageNumbers = [];
+
+        for (let i = 1; i <= 3; i++) {
+            pageNumbers.push(
+                <Pager.Item
+                    key={i}
+                    eventKey={i - 1}
+                    onSelect={this.handlePageChange}
+                >
+                    {i}
+                </Pager.Item>
+            );
+        }
+
+        return [...pageNumbers];
+    };
+
+    goToPage = pageNumber => {
+        this.reactPageScroller.goToPage(pageNumber);
+    };
+
     contextRef = createRef();
 
     render() {
+        const pagesNumbers = this.getPagesNumbers();
         return (
-            <div ref={this.contextRef}>
-                <Grid centered>
-                    <Grid.Row>
-                        <Grid.Column>
-                            <NavbarComponent />
-                        </Grid.Column>
-                    </Grid.Row>
-
-                    <Grid.Row>
-                        <Divider />
-                        <Divider />
-                    </Grid.Row>
-
-                    <Grid.Row>
-                        <ProfileComponent />
-                    </Grid.Row>
-                </Grid>
-            </div>
+            <React.Fragment>
+                <NavbarComponent />
+                <ReactPageScroller
+                    pageOnChange={this.handlePageChange}
+                    customPageNumber={this.state.currentPage}
+                >
+                    <ProfileComponent />
+                    <AboutMeComponent />
+                    <ContactMeComponent />
+                </ReactPageScroller>
+            </React.Fragment>
         );
     }
 }
