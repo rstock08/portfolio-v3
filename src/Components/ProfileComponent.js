@@ -5,7 +5,6 @@ import {
     Transition,
     Divider,
     Container,
-    GridRow
 } from "semantic-ui-react";
 
 const TITLES = [

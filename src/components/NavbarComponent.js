@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Transition, Grid, Popup, Button } from "semantic-ui-react";
-import SocialMediaComponent from "./SocialMediaComponent";
+import { Menu, Transition, Grid } from "semantic-ui-react";
 
 export default class NavbarComponent extends Component {
     state = { visible: false, activeItem: "home" };
@@ -23,10 +22,16 @@ export default class NavbarComponent extends Component {
                 animation="slide down"
                 duration={1300}
             >
-                <Grid>
+                <Grid centered style={{ backgroundColor: "red" }}>
                     <Grid.Row>
                         <Grid.Column width={16}>
-                            <Menu stackable pointing secondary widths={3}>
+                            <Menu
+                                color="yellow"
+                                stackable
+                                pointing
+                                secondary
+                                widths={3}
+                            >
                                 <Menu.Item
                                     name="home"
                                     active={activeItem === "home"}
