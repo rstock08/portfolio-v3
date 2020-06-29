@@ -36,13 +36,13 @@ class App extends Component {
 
     render() {
         return (
-            <div ref={this.contextRef}>
+            <div ref={this.contextRef} >
                 <Waypoint
                     id="home"
                     onEnter={() => this.setState({ activeMenuItem: "home" })}
                 />
-                <section id="home">
-                    <Sticky context={this.contextRef}>
+                <section id="home" >
+                    <Sticky context={this.contextRef} style={{ height: "0px", paddingBottom: "2%", marginBottom: "-10%" }}>
                         <NavbarComponent
                             openModal={this.openModal}
                             activeMenuItem={this.state.activeMenuItem}
@@ -54,6 +54,7 @@ class App extends Component {
                 <Waypoint
                     onEnter={() => this.setState({ activeMenuItem: "about" })}
                 />
+                {/* style={{ paddingTop: 100, marginTop: -75 }} */}
                 <section id="about" style={{ paddingTop: 100, marginTop: -75 }}>
                     <AboutMeComponent openModal={this.openModal} />
                 </section>
@@ -72,7 +73,7 @@ class App extends Component {
                 />
                 <section
                     id="contact-me"
-                    style={{ paddingTop: 100, marginTop: -75 }}
+                    style={{ paddingTop: 40, marginTop: -75 }}
                 >
                     <ContactMeComponent />
                 </section>

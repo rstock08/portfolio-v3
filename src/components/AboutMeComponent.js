@@ -52,7 +52,7 @@ export default class AboutMeComponent extends Component {
         const displayProgressBars = this.progressBarsToDisplay();
 
         return (
-            <Grid>
+            <Grid >
                 <GridRow centered>
                     <GridColumn>
                         <Divider horizontal style={{}}>
@@ -77,7 +77,7 @@ export default class AboutMeComponent extends Component {
                         widescreen={8}
                     >
                         <Image
-                            src={require("/resources/profile.png")}
+                            src={require("/resources/profile-image.jpg")}
                             size="medium"
                             centered
                             circular
@@ -98,14 +98,15 @@ export default class AboutMeComponent extends Component {
                                 abc 123 abc 123 abc 123 abc 123 abc 123 abc 123
                                 abc 123 abc 123 abc 123 abc 123 abc 123 abc 123
                             </p>
+
                             <br />
                             <p>Remember to check out my resume!</p>
-                            <Button.Group>
-                                <Button onClick={this.props.openModal}>
-                                    Resume
+                            {/* <Button.Group> */}
+                            <Button onClick={this.props.openModal}>
+                                Resume
                                 </Button>
-                                <Button.Or />
-                                <Button
+                            {/* <Button.Or /> */}
+                            {/* <Button
                                     style={{
                                         backgroundColor: "#fbbd08",
                                         color: "white"
@@ -113,7 +114,7 @@ export default class AboutMeComponent extends Component {
                                 >
                                     Projects
                                 </Button>
-                            </Button.Group>
+                            </Button.Group> */}
                         </Segment>
                     </GridColumn>
                     <GridColumn
@@ -159,7 +160,7 @@ export default class AboutMeComponent extends Component {
                                     onClick={this.handleItemClick}
                                 />
                             </Menu>
-                            {Object.keys(displayProgressBars).map(function(
+                            {Object.keys(displayProgressBars).map(function (
                                 key
                             ) {
                                 return (

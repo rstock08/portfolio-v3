@@ -25,7 +25,7 @@ export default class ResumeModalComponent extends Component {
                     />
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button
+                    {/* <Button
                         positive
                         icon
                         labelPosition="right"
@@ -33,7 +33,7 @@ export default class ResumeModalComponent extends Component {
                     >
                         <Icon name="download" />
                         Download
-                    </Button>
+                    </Button> */}
                     <Button
                         negative
                         icon

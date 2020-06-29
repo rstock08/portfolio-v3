@@ -66,6 +66,7 @@ export default class JumbotronComponent extends Component {
             <div
                 className="jumbotron jumbotron-fluid"
                 style={{
+                    paddingTop: "-200%",
                     paddingBottom: "30%",
                     backgroundImage: `url(${Background})`,
                     backgroundBlendMode: "luminosity",
