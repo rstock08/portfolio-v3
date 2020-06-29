@@ -1,28 +1,18 @@
 // Import react and the component classes
-import React, { Component, createRef, Section } from "react";
+import React, { Component } from "react";
 //import { Waypoint } from "react-waypoint";
-import { Sticky, Ref } from "semantic-ui-react";
-import NavbarComponent from "./Components/NavbarComponent";
+import NavbarComponent from "./Components/NavBar";
 import ProfileComponent from "./Components/ProfileComponent";
 import AboutMeComponent from "./Components/AboutMeComponent";
-import ContactMeComponent from "./Components/ContactMeComponent";
+//import ContactMeComponent from "./Components/ContactMeComponent";
 
 class App extends Component {
-    contextRef = createRef();
 
     render() {
-        return (
-            <div ref={this.contextRef}>
-                <Sticky context={this.contextRef}>
-                    <NavbarComponent />
-                </Sticky>
-
-                <ProfileComponent />
-
-                <AboutMeComponent />
-                <ContactMeComponent />
-            </div>
-        );
+        return <NavbarComponent />;
+        return <ProfileComponent />;
+        return <AboutMeComponent />;
+        return (<spinner></spinner>)
     }
 }
 
