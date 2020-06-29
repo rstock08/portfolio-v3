@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Image, Transition, Divider } from "semantic-ui-react";
+import Background from "/resources/England-Jumbotron.jpg";
+import { Transition } from "semantic-ui-react";
 
 const TITLES = [
     "A Software Engineer.",
@@ -9,7 +10,7 @@ const TITLES = [
     "An innovator."
 ];
 
-export default class ProfileComponent extends Component {
+export default class JumbotronComponent extends Component {
     state = {
         titleIndex: 0,
         animation: "fade down",
@@ -62,16 +63,34 @@ export default class ProfileComponent extends Component {
 
     render() {
         return (
-            <Grid>
-                <Grid.Column>
-                    <Image
-                        src={require("../Resources/profile.jpg")}
-                        size="medium"
-                        circular
-                        centered
-                    />
-                    <Divider hidden />
-                    <Divider hidden />
+            <div
+                className="jumbotron jumbotron-fluid"
+                style={{
+                    paddingTop: "-200%",
+                    paddingBottom: "30%",
+                    backgroundImage: `url(${Background})`,
+                    backgroundBlendMode: "luminosity",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center"
+                }}
+            >
+                <div className="container">
+                    <Transition
+                        visible={this.state.visible}
+                        animation="slide down"
+                        duration={2000}
+                    >
+                        <h1
+                            style={{
+                                marginTop: "15%",
+                                fontSize: 60,
+                                color: "#ebeae8",
+                                textShadow: "-2px 1px 1px #383736"
+                            }}
+                        >
+                            Hi, I'm Reed.
+                        </h1>
+                    </Transition>
                     <Transition
                         visible={this.state.visible}
                         animation={this.state.titleAnimation}
@@ -80,7 +99,7 @@ export default class ProfileComponent extends Component {
                         <p
                             style={{
                                 fontSize: 30,
-                                color: "#FFD700",
+                                color: "#ebeae8",
                                 textShadow: "-2px 1px 1px #383736"
                             }}
                         >
@@ -95,16 +114,16 @@ export default class ProfileComponent extends Component {
                         <p
                             style={{
                                 fontSize: 30,
-                                color: "#FFD700",
-                                textShadow: "-1px 1px 1px #383736"
+                                color: "#ebeae8",
+                                textShadow: "-2px 1px 1px #383736"
                             }}
                         >
                             I'm always looking forward to taking on the next
                             challenge!
                         </p>
                     </Transition>
-                </Grid.Column>
-            </Grid>
+                </div>
+            </div>
         );
     }
 }
