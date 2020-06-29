@@ -27,6 +27,10 @@ class App extends Component {
                     <Grid.Row>
                         <ProfileComponent />
                     </Grid.Row>
+
+                    <Grid.Row>
+                        <ProfileComponent />
+                    </Grid.Row>
                 </Grid>
             </div>
         );

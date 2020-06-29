@@ -80,7 +80,7 @@ export default class ProfileComponent extends Component {
                         <p
                             style={{
                                 fontSize: 30,
-                                color: "#ebeae8",
+                                color: "#FFD700",
                                 textShadow: "-2px 1px 1px #383736"
                             }}
                         >
@@ -95,8 +95,8 @@ export default class ProfileComponent extends Component {
                         <p
                             style={{
                                 fontSize: 30,
-                                color: "#ebeae8",
-                                textShadow: "-2px 1px 1px #383736"
+                                color: "#FFD700",
+                                textShadow: "-1px 1px 1px #383736"
                             }}
                         >
                             I'm always looking forward to taking on the next
